@@ -34,15 +34,19 @@ configurations {
 }
 
 dependencies {
+    //compile('net.sourceforge.nekohtml:nekohtml:1.9.15') // for LEGACY HTML5 template
 	/*compile('org.springframework.boot:spring-boot-starter-data-jpa')*/
 	compile('org.springframework.boot:spring-boot-devtools')
-	/*compile('org.springframework.boot:spring-boot-starter-thymeleaf')*/
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+bootRun {
+	jvmArgs = ['-Ddebug']
+}
 
 eclipse {
 	classpath {
