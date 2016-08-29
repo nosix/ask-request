@@ -13,11 +13,8 @@ open class AskRequestApplication {
 
 /*
     @Bean
-    open fun templateResolver() = SpringResourceTemplateResolver().apply {
-        prefix = "classpath:/templates/"
-        suffix = ".html"
-        templateMode = "LEGACYHTML5"
-        isCacheable = false // TODO: make it true before release
+    open fun viewResolver() = ThymeleafViewResolver().apply {
+        templateEngine = templateEngine()
     }
 
     @Bean
@@ -26,8 +23,11 @@ open class AskRequestApplication {
     }
 
     @Bean
-    open fun viewResolver() = ThymeleafViewResolver().apply {
-        templateEngine = templateEngine()
+    open fun templateResolver() = SpringResourceTemplateResolver().apply {
+        prefix = "classpath:/templates/"
+        suffix = ".html"
+        templateMode = "LEGACYHTML5"
+        isCacheable = false // TODO: make it true before release
     }
 */
 
