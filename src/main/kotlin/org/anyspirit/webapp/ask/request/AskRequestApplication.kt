@@ -3,7 +3,9 @@ package org.anyspirit.webapp.ask.request
 //import nz.net.ultraq.thymeleaf.LayoutDialect
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-//import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Bean
+import org.springframework.context.support.ResourceBundleMessageSource
+
 //import org.thymeleaf.spring4.SpringTemplateEngine
 //import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
 //import org.thymeleaf.spring4.view.ThymeleafViewResolver
@@ -11,6 +13,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 @SpringBootApplication
 open class AskRequestApplication {
 
+    @Bean
+    open fun messageSource() = ResourceBundleMessageSource().apply {
+        setDefaultEncoding("UTF-8")
+        setBasenames("templates/string")
+    }
 /*
     @Bean
     open fun viewResolver() = ThymeleafViewResolver().apply {
